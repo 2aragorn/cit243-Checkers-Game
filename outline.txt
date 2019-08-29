@@ -16,3 +16,7 @@ Battle Plan!
 	- Remove competitor piece if captured
 	- Crown king if necessary
 	- Check for game end
+	
+	
+	not sure how to use gethub but ive made this change
+	
