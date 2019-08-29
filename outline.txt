@@ -1,0 +1,18 @@
+
+Battle Plan!
+
+- Checker class
+	- player (string) (could be the color)
+	- square (int x, int y)
+	- crowned (bool)
+	
+
+- Game Loop while both players have more than 1 piece left
+	- Player chooses piece
+		- Piece must belong to the current player
+	- Code identifies valid squares to move to (and maybe highlights them)
+		- If there are no valid squares then prevent movement
+	- Player moves valid piece
+	- Remove competitor piece if captured
+	- Crown king if necessary
+	- Check for game end
