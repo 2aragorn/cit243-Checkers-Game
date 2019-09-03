@@ -1,11 +1,6 @@
 
 Battle Plan!
 
-- Checker class
-	- player (string) (could be the color)
-	- square (int x, int y)
-	- crowned (bool)
-	
 - Setup
 	- PLayer 1 gets the top 
 	- Player 2 gets the bottom
