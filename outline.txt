@@ -6,13 +6,24 @@ Battle Plan!
 	- square (int x, int y)
 	- crowned (bool)
 	
-
+- Setup
+	- PLayer 1 gets the top 
+	- Player 2 gets the bottom
 - Game Loop while both players have more than 1 piece left
 	- Player chooses piece
 		- Piece must belong to the current player
 	- Code identifies valid squares to move to (and maybe highlights them)
 		- If there are no valid squares then prevent movement
 	- Player moves valid piece
-	- Remove competitor piece if captured
-	- Crown king if necessary
+	- Remove competitor piece(s) if captured
+	- Crown king if NOT_KING && PLAYER_1 && Y=8
+	- Crown king if NOT_KING && PLAYER_2 && Y=1
 	- Check for game end
+
+
+
+- PSEUDO-CODE
+	
+	string[] colors = ["White", "Black"];
+	
+
