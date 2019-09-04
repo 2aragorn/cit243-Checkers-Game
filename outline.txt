@@ -19,6 +19,6 @@ Battle Plan!
 
 - PSEUDO-CODE
 	
-	string[] colors = ["White", "Black"];
+	string[] colors = ["Red", "Black"];
 	
 
