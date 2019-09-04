@@ -1,5 +1,5 @@
 
-Battle Plan!
+CHECKERS GAME
 
 - Setup
 	- PLayer 1 gets the top 
