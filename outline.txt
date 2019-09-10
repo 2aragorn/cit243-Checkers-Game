@@ -17,8 +17,25 @@ CHECKERS GAME
 
 
 
+
+
+
+
+
 - PSEUDO-CODE
-	
-	string[] colors = ["Red", "Black"];
-	
+
+	- Checker
+		- String color;
+		- bool crowned;
+	- Square
+		int x;
+		int y;
+		bool occupied;
+		Checker checker;
+	- Board
+		Square[][] squares;
+	- Game
+		string[] colors = ["Red", "Black"];
+		Board board;
+
 
