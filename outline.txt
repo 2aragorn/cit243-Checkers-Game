@@ -15,15 +15,7 @@ CHECKERS GAME
 	- Crown king if NOT_KING && PLAYER_2 && Y=1
 	- Check for game end
 
-
-
-
-
-
-
-
 - PSEUDO-CODE
-
 	- Checker
 		- String color;
 		- bool crowned;
@@ -39,3 +31,16 @@ CHECKERS GAME
 		Board board;
 
 
+- Function Names
+	GameLoop()
+		GetPieceFromPlayer()
+		IsPlayerPiece()
+		CanPieceMove()
+		IsDestinationSquareValid()
+		RemoveCompetitorPieces()
+		TryCrowning()
+		CheckGameOver()
+		
+		
+		
+		
