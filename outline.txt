@@ -1,6 +1,13 @@
 
 CHECKERS GAME
 
+
+- TODO
+	- Initialize game
+	- Game loop
+	- End game
+
+
 - Setup
 	- PLayer 1 gets the top 
 	- Player 2 gets the bottom
@@ -20,8 +27,7 @@ CHECKERS GAME
 		- String color;
 		- bool crowned;
 	- Square
-		int x;
-		int y;
+		bool isBlack;
 		bool occupied;
 		Checker checker;
 	- Board
