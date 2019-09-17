@@ -14,7 +14,7 @@ public class Checker {
 		return player;
 	}
 
-	public String GetCrowned() {
+	public String IsCrowned() {
 		return crowned;
 	}
 
