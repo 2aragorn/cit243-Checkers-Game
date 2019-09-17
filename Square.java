@@ -1,17 +1,17 @@
 
 public class Square {
 	
-	private String color;
+	private bool isBlack;
 	private bool occupied;
 	private Checker checker;
 
-	public Square(String color) {
-		this.color = color;
+	public Square(bool color) {
+		this.isBlack = isBlack;
 		occupied = false;
 	}
 	
-	public String GetColor() {
-		return color;
+	public bool IsBlack() {
+		return isBlack;
 	}
 	
 	public bool IsOccupied() {
