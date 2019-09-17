@@ -1,6 +1,6 @@
 
 public class Checker {
-	
+
 	private String player;
 	private bool crowned;
 
@@ -21,5 +21,5 @@ public class Checker {
 	public void SetCrowned() {
 		crowned = true;
 	}
-  
+
 }
