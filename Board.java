@@ -27,4 +27,27 @@ public class Board {
 		
 	}
 	
+	
+	public int GetWidth() {
+		return width;	
+	}
+	
+	public int GetHeight() {
+		return height;	
+	}
+	
+	public Square[][] GetSquares() {
+		return squares;	
+	}
+		
+	public Square GetSquare(int x, int y) {
+		// NOTE: this might not be the best way to handle the errors. But it is effective.
+		
+		x = (x % width);	// Make sure that we do not try for an index that does not exist
+		y = (y % height);	// Make sure that we do not try for an index that does not exist
+		
+		return squares[x][y];	
+	}
+	
+	
 }
