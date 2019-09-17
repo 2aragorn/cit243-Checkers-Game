@@ -15,6 +15,13 @@ public class Board {
 		for (int x = 0; x < width; x++) {	// Loop over each column
 			for (int y = 0; y < width; y++) {	// Loop over each row in the column
 				
+				bool xEven = ((x % 2) == 0);	// Check if x is an even number
+				bool yEven = ((y % 2) == 0);	// Check if y is an even number
+				
+				bool isBlack = (xEven && yEven);	// Black squares must have even x and y coordinates
+				
+				squares[x][y] = new Square(isBlack);	// Initialize a new square at thiis coordinate
+				
 			}
 		}
 		
