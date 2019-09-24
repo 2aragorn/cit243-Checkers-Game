@@ -50,3 +50,33 @@ CHECKERS GAME
 		
 		
 		
+		
+		
+		
+StartNewGame()
+	SetupBoard()
+		AddRedCheckers()
+		AddWhiteCheckers()
+	StartGameLoop()
+		SetCurrentPlayer()
+		GetPieceToMove()
+			PlayerOwnsPiece()
+			PieceCanMove()
+				CheckIfPieceCanMoveDiagnallyForward()
+				CheckIfPieceCanMoveDiagnallyBackward()	// If crowned
+		MovePieceToSquare()
+		RemoveCapturedPieces()
+		CrownPiece()
+		CheckForGameEnd()
+	DisplayWinner()
+	SetGameOver()
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
