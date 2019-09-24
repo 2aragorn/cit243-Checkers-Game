@@ -18,7 +18,7 @@ public class Board {
 				bool xEven = ((x % 2) == 0);	// Check if x is an even number
 				bool yEven = ((y % 2) == 0);	// Check if y is an even number
 				
-				bool isBlack = (xEven && yEven);	// Black squares must have even x and y coordinates
+				bool isBlack = (xEven == yEven);	// Black squares have matching x and y coordinates
 				
 				squares[x][y] = new Square(isBlack);	// Initialize a new square at thiis coordinate
 				
