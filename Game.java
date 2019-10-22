@@ -2,6 +2,7 @@ public class Game {
 	
 	private String[] players;
 	private Board board;
+	private string currentPlayer;
 
 	public Game() {
 		players = new String[]{"Red", "Black"};
@@ -12,7 +13,11 @@ public class Game {
 		
 		board = new Board();	// Initialize a new board
 		
+		
 		SetupBoard();
+		
+		currentPlayer = players[0];
+			
 		GameLoop();
 	}
 		
