@@ -1,13 +1,17 @@
 
 public class Square {
 	
-	private bool isBlack;
-	private bool occupied;
+	private boolean isBlack;
+	private boolean occupied;
 	private Checker checker;
+	private int x;
+	private int y;
 
-	public Square(bool color) {
+	public Square(boolean isBlack, int x, int y) {
 		this.isBlack = isBlack;
 		occupied = false;
+		this.x = x;
+		this.y = y;
 	}
 	
 	public bool IsBlack() {
