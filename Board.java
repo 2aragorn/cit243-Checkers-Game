@@ -20,7 +20,7 @@ public class Board {
 				
 				bool isBlack = (xEven == yEven);	// Black squares have matching x and y coordinates
 				
-				squares[x][y] = new Square(isBlack);	// Initialize a new square at thiis coordinate
+				squares[x][y] = new Square(isBlack, x, y);	// Initialize a new square at thiis coordinate
 				
 			}
 		}
