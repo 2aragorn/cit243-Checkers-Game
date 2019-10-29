@@ -155,8 +155,10 @@ public class Game {
 							board.squares[x][y].SetChecker(board.squares[chosenX][chosenY].checker);
 							board.squares[chosenX][chosenY].checker.RemoveChecker();
 							
-							if (CanJump(x, y)) {
+							if (CanJump(x, y)) {	// This player must continue moving this piece
 								canChangePiece = false;
+								chosenX = x;
+								chosenY = y;
 							} 
 							else {
 								UpdatePlayer();
