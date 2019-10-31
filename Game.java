@@ -271,26 +271,7 @@ public class Game {
 			return (gameOver);
 		}
 		
-		
-		
-		
-		
-		private boolean CanJump(int x, int y) {
-			// Incomplete function
-			boolean canJump = false;
-			
-			return (canJump);
-		}
-		
-		private Square[] ValidMovements(int x, int y) {
-			// Incomplete function
-			Square[] validSquares;
-			
-			return (validSquares);
-		}
-		
-		private void RemoveCapturedPieces(int fromX, int fromY, int destX, int destY) {			
-			// Incomplete function
+		private void RemoveCapturedPieces(int fromX, int fromY, int destX, int destY) {
 			
 			// If the a piece was captured then there would have been
 			// a diagonal jump. We need to find the square between the diagonal
@@ -315,8 +296,44 @@ public class Game {
 			}
 			else {	// Case 2: the user jumped and captured a piece
 				
+				int captureX = 0;
+				int captureY = 0;
+				
+				if (fromX > destX) {
+					captureX = (fromX - 1);
+				}
+				else {
+					captureX = (fromX + 1);
+				}
+				
+				if (fromY > destY) {
+					captureY = (fromY - 1);
+				}
+				else {
+					captureY = (fromY + 1);
+				}
+				
+				board.squares[captureX][captureY].checker.RemoveChecker();
 			}		
 			
+		}
+		
+		
+		
+		
+		
+		private boolean CanJump(int x, int y) {
+			// Incomplete function
+			boolean canJump = false;
+			
+			return (canJump);
+		}
+		
+		private Square[] ValidMovements(int x, int y) {
+			// Incomplete function
+			Square[] validSquares;
+			
+			return (validSquares);
 		}
 		
 		
