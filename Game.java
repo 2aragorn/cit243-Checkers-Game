@@ -298,6 +298,7 @@ public class Game {
 			
 			
 			// Case 1: The user moved one space and did NOT capture a piece
+			// x x x
 			// x o x
 			// o x x
 			
@@ -306,7 +307,15 @@ public class Game {
 			// x x x
 			// o x x
 			
+			int xDistance = Math.abs(fromX - destX);	// Get the absolute value in case the number is negative
+			int yDistance = Math.abs(fromY - destY);	// Get the absolute value in case the number is negative
 			
+			if ((xDistance == 1) && (yDistance == 1)) {	// Case 1: the user only moved one space
+				// Do nothing.
+			}
+			else {	// Case 2: the user jumped and captured a piece
+				
+			}		
 			
 		}
 		
@@ -321,3 +330,11 @@ public class Game {
 		}
 	
 }
+
+
+
+
+
+
+
+
