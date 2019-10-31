@@ -272,6 +272,9 @@ public class Game {
 		}
 		
 		
+		
+		
+		
 		private boolean CanJump(int x, int y) {
 			// Incomplete function
 			boolean canJump = false;
@@ -288,7 +291,33 @@ public class Game {
 		
 		private void RemoveCapturedPieces(int fromX, int fromY, int destX, int destY) {			
 			// Incomplete function
+			
+			// If the a piece was captured then there would have been
+			// a diagonal jump. We need to find the square between the diagonal
+			// locations and remove any piece from it.
+			
+			
+			// Case 1: The user moved one space and did NOT capture a piece
+			// x o x
+			// o x x
+			
+			// Case 2: The user jumped and captured a piece
+			// x x o
+			// x x x
+			// o x x
+			
+			
+			
 		}
 		
+		
+		
+		public void RedrawBoard() {
+			// - Update the player's label
+			// - Draw the colored squares on the board
+			// - Draw the checkers on the board
+			
+			// Incomplete function
+		}
 	
 }
