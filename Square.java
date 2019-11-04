@@ -26,6 +26,14 @@ public class Square {
 		return checker;
 	}
 	
+	public Checker GetX() {
+		return x;
+	}
+	
+	public Checker GetY() {
+		return y;
+	}
+	
 	public void SetChecker(Checker checker) {
 		occupied = true;
 		this.checker = checker;
