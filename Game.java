@@ -318,6 +318,217 @@ public class Game {
 			
 		}
 		
+		private Square[] ValidMovements(int x, int y) {
+			
+			Boolean canMoveDown = false;	// Only crowned or red checkers can move down
+			Boolean canMoveUp = false;		// Only crowned or black checkers can move up
+			
+			Checker checker = board.squares[x][y].GetChecker();
+			
+			// Check if the checker can move down
+				if (checker.IsCrowned() || (checker.GetPlayer() == players[0])) {
+					canMoveDown = true;
+				}
+			
+			// Check if the checker can move up
+				if (checker.IsCrowned() || (checker.GetPlayer() == players[1])) {
+					canMoveUp = true;
+				}
+			
+			
+			
+			
+			// Define variables we might user
+				Square TL = NULL;	// Top-left
+				Square TR = NULL;	// Top-right
+				Square BL = NULL;	// Bottom-left
+				Square BR = NULL;	// Bottom-right
+				int squareCount = 0;	// Used to initialize the array
+			
+			
+			
+			// Get valid upward movements
+				
+				if ((x > 0) && (y > 0)) {	// Can move diagonally to the top-left
+					
+					int topLeftX = (x - 1);
+					int topLeftY = (y - 1);
+					
+					if (board.squares[topLeftX][topLeftY].IsOccupied()) {
+						Checker diagonalChecker = board.squares[topLeftX][topLeftY].GetChecker();
+						
+						if (diagonalChecker.GetPlayer() != checker.GetPlayer()) {
+							// We can try capturing this piece
+							
+							
+							if ((topLeftX > 0) && (topLeftY > 0)) {	// Can move diagonally to the top-left
+								
+								int top2LeftX = (topLeftX - 1);
+								int top2LeftY = (topLeftY - 1);
+								
+								if (!board.squares[top2LeftX][top2LeftY].IsOccupied()) {
+									// We can move here
+									squareCount++;	// We can add a square
+									TL = board.squares[top2LeftX][top2LeftY];
+								}
+								else {
+									// We can NOT move here
+								}
+							}
+										
+							
+						}
+					}
+					else {	// We can move here
+						squareCount++;	// We can add a square
+						TL = board.squares[topLeftX][topLeftY];
+					}
+					
+				}
+			
+				if ((x < 7) && (y > 0)) {	// Can move diagonally to the top-right
+					
+					int topLeftX = (x + 1);
+					int topLeftY = (y - 1);
+					
+					if (board.squares[topLeftX][topLeftY].IsOccupied()) {
+						Checker diagonalChecker = board.squares[topLeftX][topLeftY].GetChecker();
+						
+						if (diagonalChecker.GetPlayer() != checker.GetPlayer()) {
+							// We can try capturing this piece
+							
+							
+							if ((topLeftX < 7) && (topLeftY > 0)) {	// Can move diagonally to the top-right
+								
+								int top2LeftX = (topLeftX + 1);
+								int top2LeftY = (topLeftY - 1);
+								
+								if (!board.squares[top2LeftX][top2LeftY].IsOccupied()) {
+									// We can move here
+									squareCount++;	// We can add a square
+									TR = board.squares[top2LeftX][top2LeftY];
+								}
+								else {
+									// We can NOT move here
+								}
+							}
+										
+							
+						}
+					}
+					else {	// We can move here
+						squareCount++;	// We can add a square
+						TR = board.squares[topLeftX][topLeftY];
+					}
+					
+				}
+			
+				if ((x > 0) && (y < 7)) {	// Can move diagonally to the bottom-left
+					
+					int bottomLeftX = (x - 1);
+					int bottomLeftY = (y + 1);
+					
+					if (board.squares[bottomLeftX][bottomLeftY].IsOccupied()) {
+						Checker diagonalChecker = board.squares[bottomLeftX][bottomLeftY].GetChecker();
+						
+						if (diagonalChecker.GetPlayer() != checker.GetPlayer()) {
+							// We can try capturing this piece
+							
+							
+							if ((bottomLeftX > 0) && (bottomLeftY < 7)) {	// Can move diagonally to the bottom-left
+								
+								int bottom2LeftX = (bottomLeftX - 1);
+								int bottom2LeftY = (bottomLeftY + 1);
+								
+								if (!board.squares[bottom2LeftX][bottom2LeftY].IsOccupied()) {
+									// We can move here
+									squareCount++;	// We can add a square
+									BL = board.squares[bottom2LeftX][bottom2LeftY];
+								}
+								else {
+									// We can NOT move here
+								}
+							}
+										
+							
+						}
+					}
+					else {	// We can move here
+						squareCount++;	// We can add a square
+						BL = board.squares[bottomLeftX][bottomLeftY];
+					}
+					
+				}
+			
+				if ((x < 7) && (y < 7)) {	// Can move diagonally to the bottom-right
+					
+					int bottomLeftX = (x + 1);
+					int bottomLeftY = (y - 1);
+					
+					if (board.squares[bottomLeftX][bottomLeftY].IsOccupied()) {
+						Checker diagonalChecker = board.squares[bottomLeftX][bottomLeftY].GetChecker();
+						
+						if (diagonalChecker.GetPlayer() != checker.GetPlayer()) {
+							// We can try capturing this piece
+							
+							
+							if ((bottomLeftX < 7) && (bottomLeftY < 7)) {	// Can move diagonally to the bottom-right
+								
+								int bottom2LeftX = (bottomLeftX + 1);
+								int bottom2LeftY = (bottomLeftY - 1);
+								
+								if (!board.squares[bottom2LeftX][bottom2LeftY].IsOccupied()) {
+									// We can move here
+									squareCount++;	// We can add a square
+									BR = board.squares[bottom2LeftX][bottom2LeftY];
+								}
+								else {
+									// We can NOT move here
+								}
+							}
+										
+							
+						}
+					}
+					else {	// We can move here
+						squareCount++;	// We can add a square
+						BR = board.squares[bottomLeftX][bottomLeftY];
+					}
+					
+				}
+			
+			
+			
+			
+			
+			
+			
+			Square[] validSquares = new Square[squareCount];
+			
+			int countDown = (squareCount - 1);	// Add a -1 to account for zero based counting
+			
+			if (countDown >= 0 && BR != NULL) {
+				validSquares[countDown] = BR;
+				countDown--;
+			}
+			if (countDown >= 0 && BL != NULL) {
+				validSquares[countDown] = BL;
+				countDown--;
+			}
+			if (countDown >= 0 && TR != NULL) {
+				validSquares[countDown] = TR;
+				countDown--;
+			}
+			if (countDown >= 0 && TL != NULL) {
+				validSquares[countDown] = TL;
+				countDown--;
+			}
+			
+			
+			
+			
+			return (validSquares);
+		}
 		
 		
 		
@@ -328,15 +539,6 @@ public class Game {
 			
 			return (canJump);
 		}
-		
-		private Square[] ValidMovements(int x, int y) {
-			// Incomplete function
-			Square[] validSquares;
-			
-			return (validSquares);
-		}
-		
-		
 		
 		public void RedrawBoard() {
 			// - Update the player's label
