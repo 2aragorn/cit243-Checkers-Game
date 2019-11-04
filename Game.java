@@ -530,15 +530,33 @@ public class Game {
 			return (validSquares);
 		}
 		
-		
-		
-		
 		private boolean CanJump(int x, int y) {
-			// Incomplete function
 			boolean canJump = false;
+			
+			
+			Square[] validSquares = ValidMovements(x, y);
+			
+			for (int i = 0; i < validSquares.length; i++) {
+				
+				int xDifference = Math.abs(x - validSquares[i].GetX());
+				
+				if (xDifference > 1) {	// If we have to jump diagonally then we will move at least 2 x squares away
+					canJump = true;
+					break;
+				}
+			}
+			
+			
+			boolean canMove = (validSquares.length > 0);
 			
 			return (canJump);
 		}
+		
+		
+		
+		
+		
+		
 		
 		public void RedrawBoard() {
 			// - Update the player's label
